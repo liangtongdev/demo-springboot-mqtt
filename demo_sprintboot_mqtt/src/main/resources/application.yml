@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  mqtt:
+    # publish 发布
+    publish:
+      #发布 - 用户名
+      username: admin
+      #发布 - 密码
+      password: password
+      #发布 - 服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613,tcp://192.168.2.133:61613
+      url: tcp://127.0.0.1:61613
+      client:
+        #发布 - 连接服务器默认客户端ID
+        id: mqttId
+      default:
+        #发布 - 默认的消息推送主题，实际可在调用接口时指定
+        topic: topic
+
+    # subscribe 订阅
+    subscribe:
+      #订阅 - 用户名
+      username: admin
+      #订阅 - 密码
+      password: password
+      #订阅 - 服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613,tcp://192.168.2.133:61613
+      url: tcp://127.0.0.1:61613,tcp://192.168.2.133:61614
+      client:
+        #订阅 - 连接服务器默认客户端ID
+        id: mqttId-2
+      default:
+        #订阅 - 默认的消息推送主题，实际可在调用接口时指定
+        topic: hello,world
+        #订阅 - 连接超时
+      completionTimeout: 3000
+
